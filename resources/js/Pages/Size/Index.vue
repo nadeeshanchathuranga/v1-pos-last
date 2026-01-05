@@ -105,7 +105,7 @@
 
             <table
           id="SizeTable"
-          class="w-full text-gray-700 bg-white border border-gray-300 rounded-lg shadow-md table-auto"
+          class="w-full text-center text-gray-700 bg-white border border-gray-300 rounded-lg shadow-md table-auto"
           >
           <thead>
             <tr
@@ -120,7 +120,7 @@
             <tr
   v-for="(size, index) in allsize"
   :key="size.id"
-  class="hover:bg-gray-200"
+  class="hover:bg-gray-200 text-center"
 >
             <td class="px-6 py-3 text- first-letter:">{{ index + 1 }}</td>
               <td class="px-6 py-3">{{ size.name }}</td>

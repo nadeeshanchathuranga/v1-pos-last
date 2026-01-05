@@ -29,7 +29,7 @@
       </Link>
 
 
-      
+
 
       <Link href="/categories" v-if="HasRole(['Admin', 'Manager'])">
         <div class="dashboard-card bg-[#003161]">
@@ -115,7 +115,28 @@
       </Link>
 
 
-<Link href="/units" v-if="HasRole(['Admin', 'Manager'])">
+      <Link href="/sizes" v-if="HasRole(['Admin', 'Manager'])">
+        <div class="dashboard-card bg-[#36f5f5]">
+          <div class="card-content">
+            <div class="icon-container">
+              <img
+                src="/images/dashboard/measuring-tape.png"
+                class="icon"
+                alt="dresshub.lk"
+              />
+            </div>
+            <div class="text-container">
+              <p class="title">Sizes</p>
+              <p class="description">
+                Organize and update product sizes to streamline inventory
+                tracking and simplify the sales process.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Link>
+
+<!-- <Link href="/units" v-if="HasRole(['Admin', 'Manager'])">
         <div class="dashboard-card bg-[#2a1b58]">
           <div class="card-content">
             <div class="icon-container">
@@ -129,13 +150,13 @@
               <p class="title">Units</p>
               <p class="description">
                 Manage and standardize product Units
-                to ensure accurate inventory tracking, consistent pricing, 
+                to ensure accurate inventory tracking, consistent pricing,
                 and a smoother sales process
               </p>
             </div>
           </div>
         </div>
-      </Link>
+      </Link> -->
 
       <Link href="/customers" v-if="HasRole(['Admin', 'Manager'])">
         <div class="dashboard-card bg-[#CB9DF0]">
@@ -200,26 +221,7 @@
         </div>
       </Link>
 
-      <Link href="/sizes" v-if="HasRole(['Admin', 'Manager'])">
-        <div class="dashboard-card bg-[#36f5f5]">
-          <div class="card-content">
-            <div class="icon-container">
-              <img
-                src="/images/dashboard/measuring-tape.png"
-                class="icon"
-                alt="dresshub.lk"
-              />
-            </div>
-            <div class="text-container">
-              <p class="title">Sizes</p>
-              <p class="description">
-                Organize and update product sizes to streamline inventory
-                tracking and simplify the sales process.
-              </p>
-            </div>
-          </div>
-        </div>
-      </Link>
+
 
       <Link href="/stock-transition" v-if="HasRole(['Admin'])">
         <div class="dashboard-card bg-[#3426ff]">
@@ -455,7 +457,7 @@
         </div>
       </Link>
 
-      
+
 <Link href="/users" v-if="HasRole(['Admin'])">
       <div class="dashboard-card bg-[#ffb224]">
         <div class="card-content">

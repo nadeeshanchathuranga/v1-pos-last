@@ -25,13 +25,14 @@ class SizeController extends Controller
 
     public function store(Request $request)
     {
+
         if ($request->has('sizeName')) {
 
             $request->merge(['name' => $request->input('sizeName')]);
 
 
             $validated = $request->validate([
-                'name' => 'required|string|max:191|regex:/^[a-zA-Z\s]+$/',
+                'name' => 'required|string|max:100|regex:/^[a-zA-Z0-9\s-]+$/', // Allow letters, numbers, spaces, and hyphens
             ]);
 
 
@@ -44,7 +45,7 @@ class SizeController extends Controller
         if ($request->has('name')) {
             // Validate name directly
             $validated = $request->validate([
-                'name' => 'required|string|max:191|regex:/^[a-zA-Z\s]+$/',
+                'name' => 'required|string|max:100|regex:/^[a-zA-Z0-9\s-]+$/', // Allow letters, numbers, spaces, and hyphens
             ]);
 
 
@@ -66,8 +67,9 @@ class SizeController extends Controller
         if (!Gate::allows('hasRole', ['Admin'])) {
             abort(403, 'Unauthorized');
         }
+
         $validated = $request->validate([
-            'name' => 'nullable|string|max:191|regex:/^[a-zA-Z\s]+$/',
+            'name' => 'required|string|max:100|regex:/^[a-zA-Z0-9\s-]+$/', // Allow letters, numbers, spaces, and hyphens
         ]);
 
         $Size->update($validated);

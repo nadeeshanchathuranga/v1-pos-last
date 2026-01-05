@@ -134,7 +134,17 @@
 
   });
 
+  const validateName = (name) => {
+    const nameRegex = /^[a-zA-Z0-9\s-]+$/; // Allow letters, numbers, spaces, and hyphens
+    return nameRegex.test(name);
+  };
+
   const submit = () => {
+    if (!validateName(form.name)) {
+      form.errors.name = "The name field format is invalid.";
+      return;
+    }
+
     form.post("/sizes", {
       onSuccess: () => {
         form.reset();

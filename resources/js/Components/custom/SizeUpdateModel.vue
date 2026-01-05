@@ -139,8 +139,18 @@
     { immediate: true } // Run immediately when the component is mounted
   );
 
+  const validateName = (name) => {
+    const nameRegex = /^[a-zA-Z0-9\s-]+$/; // Allow letters, numbers, spaces, and hyphens
+    return nameRegex.test(name);
+  };
+
   // Submit form
   const submit = () => {
+    if (!validateName(form.name)) {
+      form.errors.name = "The name field format is invalid.";
+      return;
+    }
+
     form.put(`/sizes/${selectedSize.id}`, {
       onSuccess: () => {
         form.reset();
