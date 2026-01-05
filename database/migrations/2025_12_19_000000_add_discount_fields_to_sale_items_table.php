@@ -39,7 +39,7 @@ return new class extends Migration
         Schema::table('sale_items', function (Blueprint $table) {
             $table->dropColumn([
                 'discount',
-                'apply_discount', 
+                'apply_discount',
                 'discounted_price',
                 'include_custom',
                 'selling_price'

@@ -177,7 +177,7 @@ defineProps({
 const form = useForm({
   name: "",
   parent_id: "",
-  commission: "",
+  commission: 0, // Default value set to 0
 });
 
 const submit = () => {
